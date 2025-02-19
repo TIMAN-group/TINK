@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Hyperedge: {{ hyperedge_text }}</h2>
+
+<h3>Associated Nodes</h3>
+<ul>
+    {% for node_id, node_title in nodes %}
+        <li><a href="/node/{{ node_id }}">Node: '{{ node_title }}'</a></li>
+    {% endfor %}
+</ul>
+
+<a href="/">Back to All Nodes</a>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="display: flex; gap: 20px;">
+    <!-- Main Content for Node Details -->
+    <section style="flex-grow: 1;">
+        <h2>{{ node_display_text }}</h2>
+        <p>{{ node_text | safe }}</p>
+        <a href="/">Back to All Nodes</a>
+    </section>
+
+    <!-- Sidebar for Hyperedges -->
+    <aside style="width: 25%; background-color: #dcdcdc; padding: 1rem; border: 1px solid #9C9A9D; border-radius: 5px;">
+        <h3>Hyperedges:</h3>
+        <ul>
+            {% for id, text in hyperedges %}
+                <li><a href="/hyperedge/{{ id }}"> {{ text }} </a></li>
+            {% endfor %}
+        </ul>
+    </aside>
+</div>
+{% endblock %}

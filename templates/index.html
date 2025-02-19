@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Node Search</h1>
+
+<!-- Search Form -->
+<form method="get" action="/">
+    <input type="text" name="search" placeholder="Search for a node..." value="{{ search_query }}" style="padding: 0.5rem; width: 300px; border: 1px solid #ddd; border-radius: 5px;">
+    <button type="submit" style="padding: 0.5rem 1rem; background-color: #007bff; color: white; border: none; border-radius: 5px;">Search</button>
+</form>
+
+<!-- Display Nodes -->
+{% if nodes %}
+    <ul style="margin-top: 20px;">
+        {% for node_id, node_display, node_text in nodes %}
+            <li>
+                <a href="/node/{{ node_id }}">Node '{{ node_display }}': {{ node_text[:50] }}...</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No nodes found matching your search query.</p>
+{% endif %}
+{% endblock %}

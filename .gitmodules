@@ -1,0 +1,3 @@
+[submodule "HoTPy"]
+	path = HoTPy
+	url = git@github.com:TIMAN-group/HoTPy.git
