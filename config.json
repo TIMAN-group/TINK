@@ -3,12 +3,6 @@
 
     "pages": [
       {
-        "route": "/analysis/stats",
-        "template": "stats.html",
-        "func": "stats",
-        "title": "Stats"
-      },
-      {
         "route": "/analysis/chart",
         "template": "he_chart.html",
         "func": "chart",
